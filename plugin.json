@@ -1,0 +1,17 @@
+{
+    "id": "nodebb-plugin-crazy-egg",
+    "name": "Crazy Egg",
+    "description": "Crazy Egg for NodeBB",
+    "url": "https://github.com/thenickot2/nodebb-plugin-crazy-egg",
+    "library": "./index.js",
+    "templates": "templates",
+    "scripts": [
+        "lib/client.js"
+    ],
+    "hooks": [
+        { "hook": "static:app.load", "method": "init" },
+        { "hook": "filter:admin.header.build", "method": "routeMenu" },
+        { "hook": "action:settings.set", "method": "onConfigChange" },
+        { "hook": "filter:admin.notices", "method": "getNotices"}
+    ]
+}
